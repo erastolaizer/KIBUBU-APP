@@ -1,0 +1,56 @@
+<!--
+  Generated template for the WithdrawPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Withdraw</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="withdraw" (ngSubmit)="withdrawForm()">
+
+    <ion-list>
+      <ion-item>
+        <ion-label stacked><h2>Chagua Lengo</h2></ion-label>
+      <ion-select formControlName="lengo_name" placeholder="" cancelText="cancel" okText="okay">
+        <ion-option *ngFor="let lengo of malengo" value="{{lengo.lengo_name}}">{{lengo.lengo_name}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+      <ion-item>
+        <ion-label stacked><h2>Choose Wakala</h2></ion-label>
+      <ion-select formControlName="service_provider"  placeholder="" cancelText="cancel" okText="okay">
+        <ion-option value="M-PESA">M-PESA</ion-option>
+        <ion-option value="TIGO-PESA">TIGO-PESA</ion-option>
+        <ion-option value="AIRTEL-MONEY">AIRTEL-MONEY</ion-option>
+      </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked><h2>Enter Your Phone number</h2></ion-label>
+        <ion-input type="text" formControlName="phone_number" placeholder=""></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked><h2>Enter KIBUBU ACCOUNT Password</h2></ion-label>
+        <ion-input type="password" formControlName="password" placeholder=""></ion-input>
+      </ion-item>
+
+    <button ion-button type="submit" [disabled]="!withdraw.valid" block>withdraw</button>
+    </ion-list>
+    </form>
+    <div class="" *ngIf="canDraw">
+      <ion-label color="danger">Your fixed time is not over</ion-label>
+      <ion-label color="danger">Your deposited for {{period}}</ion-label>
+      <ion-label color="secondary">Your will be able to withdraw at : {{expire}}</ion-label>
+    </div>
+</ion-content>

@@ -1,0 +1,38 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title align="center">KIBUBU APPLICATION</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding >
+  <ion-label color="primary"><h3>Create Lengo</h3></ion-label>
+    <form [formGroup]="lengo" (ngSubmit)="lengoForm()">
+      <ion-list>
+          <ion-item>
+            <ion-label stacked><h2>Lengo name</h2> </ion-label>
+            <ion-input type="text" formControlName="lengo_name" ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label stacked><h2>Choose Fixed time</h2></ion-label>
+            <ion-select formControlName="time"  placeholder="" cancelText="Sitisha" okText="Sawa">
+              <ion-option value="1 Month">1 Month</ion-option>
+              <ion-option value="3 Month">3 Months</ion-option>
+              <ion-option value="6 Month">6 Months</ion-option>
+              <ion-option value="1 Year">1 Year</ion-option>
+              <ion-option value="1.5 Year">1.5 Year</ion-option>
+            </ion-select> <hr>
+          </ion-item>
+      </ion-list>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-4> <button ion-button color="secondary" type="submit" [disabled]="!lengo.valid"> Create</button></ion-col>
+            </ion-row>
+          </ion-grid>
+        </form><br>
+  </ion-content>

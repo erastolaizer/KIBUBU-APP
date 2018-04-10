@@ -1,0 +1,39 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title align="center">KIBUBU APPLICATION</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding >
+<ion-label color="primary"><h3>Register to KIBUBU APP</h3></ion-label>
+    <form [formGroup]="register" (ngSubmit)="regForm()">
+      <ion-list>
+        <ion-item>
+          <ion-label stacked><h2>Full Name</h2> </ion-label>
+          <ion-input type="text" formControlName="name" ></ion-input>
+        </ion-item>
+
+          <ion-item>
+            <ion-label stacked><h2>Phone Number</h2> </ion-label>
+            <ion-input type="text" formControlName="phone_number" ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label stacked><h2>Password</h2></ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label stacked><h2>Repeat Password</h2></ion-label>
+            <ion-input type="password" formControlName="repeat_pass"></ion-input>
+          </ion-item>
+      </ion-list>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-4> <button ion-button color="secondary" type="submit" [disabled]="!register.valid"><ion-icon name="log-in"></ion-icon><pre> </pre> Register</button></ion-col>
+            </ion-row>
+          </ion-grid>
+        </form>
+  </ion-content>

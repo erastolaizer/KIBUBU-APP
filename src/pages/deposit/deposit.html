@@ -1,0 +1,54 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title align="center">KIBUBU APPLICATION</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="deposit">
+  <ion-grid>
+<h3><ion-label color="primary">Deposit to KIBUBU</ion-label></h3>
+  <form [formGroup]="deposit" (ngSubmit)="depositForm()">
+
+    <ion-list>
+      <ion-item>
+        <ion-label stacked><h2>Chagua Lengo</h2></ion-label>
+      <ion-select formControlName="lengo" placeholder="" cancelText="cancel" okText="okay">
+        <ion-option *ngFor="let lengo of malengo" value="{{lengo.lengo_name}}">{{lengo.lengo_name}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+      <ion-item>
+        <ion-label stacked><h2>Choose Wakala</h2></ion-label>
+      <ion-select formControlName="service_provider"  placeholder="" cancelText="cancel" okText="okay" #C (ionChange)= "onChange(C.value)">
+        <ion-option value="M-PESA">M-PESA</ion-option>
+        <ion-option value="TIGO-PESA">TIGO-PESA</ion-option>
+        <ion-option value="AIRTEL-MONEY">AIRTEL-MONEY</ion-option>
+      </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked><h2>Enter Your Phone number</h2></ion-label>
+        <ion-input type="text" formControlName="phone_number" placeholder=""></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked><h2>Enter amount</h2></ion-label>
+        <ion-input type="text" formControlName="amount" placeholder=""></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="pass">
+        <ion-label stacked><h2>Enter {{wakala}} password</h2></ion-label>
+        <ion-input type="password" formControlName="password" placeholder=""></ion-input>
+      </ion-item>
+
+    <button ion-button type="submit" [disabled]="!deposit.valid" block>Deposit</button>
+    </ion-list>
+    </form>
+
+  </ion-grid>
+  </ion-content>

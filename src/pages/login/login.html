@@ -1,0 +1,37 @@
+<!--
+  Generated template for the ForumPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title align="center">KIBUBU APPLICATION</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding >
+  <ion-label color="primary"><h3>Login</h3></ion-label>
+    <form [formGroup]="login" (ngSubmit)="logForm()">
+      <ion-list>
+          <ion-item>
+            <ion-label stacked><h2>Phone Number</h2> </ion-label>
+            <ion-input type="text" formControlName="phone_number" value=""></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label stacked><h2>Password</h2></ion-label>
+            <ion-input type="password" formControlName="password" value=""></ion-input>
+          </ion-item>
+      </ion-list>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-4> <button ion-button color="secondary" type="submit" [disabled]="!login.valid"><ion-icon name="log-in"></ion-icon><pre> </pre> Login</button></ion-col>
+              <ion-col col-8><a href="#" (click)="forgetPass()" align="center"><ion-label>Forget Password</ion-label></a></ion-col>
+            </ion-row>
+          </ion-grid>
+        </form><br>
+
+  <ion-label>You don't have an acount? <a href="#" (click)="register()">Register here</a></ion-label>
+  </ion-content>

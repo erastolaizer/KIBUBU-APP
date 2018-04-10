@@ -1,0 +1,42 @@
+<!--
+  Generated template for the ForgetpassPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Forget Password</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-label color="primary"><h4>Enter your previous details</h4></ion-label>
+    <form [formGroup]="forgetp" (ngSubmit)="forgetpass()">
+      <ion-list>
+
+            <ion-item>
+              <ion-label stacked><h2>Your Full Name</h2></ion-label>
+              <ion-input type="name" formControlName="name"></ion-input>
+            </ion-item>
+          <ion-item>
+            <ion-label stacked><h2>Your Phone Number</h2> </ion-label>
+            <ion-input type="text" formControlName="phone_number" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked><h2>New Password</h2></ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked><h2>Repeat New Password</h2></ion-label>
+            <ion-input type="password" formControlName="repeat_pass"></ion-input>
+          </ion-item>
+
+      </ion-list>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-4> <button ion-button color="secondary" type="submit" [disabled]="!forgetp.valid"><ion-icon name=""></ion-icon>FORGET Password</button></ion-col>
+            </ion-row>
+          </ion-grid>
+        </form><br>
+</ion-content>

@@ -1,0 +1,21 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Check Your Balance</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="" *ngFor="let balance of balances">
+
+  <ion-list>
+   <ion-label color="primary">Balance For {{balance.lengo}} Target </ion-label>
+   <ion-item>Balance Amount: {{balance.amount}}</ion-item>
+   <ion-item>Last Update: {{balance.updated_at}}</ion-item><br>
+  </ion-list>
+
+  </div>
+</ion-content>
