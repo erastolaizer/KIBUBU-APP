@@ -44,7 +44,7 @@ export class LoginPage {
              this.showLoader();
                let     headers  : any      = new Headers({ 'X-Requested-With': 'XMLHttpRequest'}),
                        options  : any      = new RequestOptions({ headers: headers }),
-                       url      : any       = 'http://192.168.43.224:8000/api/user/login',
+                       url      : any       = 'http://kibubu.dreamgeeks.tech/public/api/user/login',
                        body    : any        = {phone_number:phone_number,password:password};
 
                        this.http.post(url,body,options).map(res =>res.json())

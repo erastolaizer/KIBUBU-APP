@@ -21,7 +21,7 @@ export class HistoryPage {
 
       let     headers  : any      = new Headers({ 'X-Requested-With': 'XMLHttpRequest'}),
               options  : any      = new RequestOptions({ headers: headers }),
-              url      : any       = 'http://192.168.43.224:8000/api/history/' + this.id;
+              url      : any       = 'http://kibubu.dreamgeeks.tech/public/api/history/' + this.id;
 
               this.http.get(url,options).map(res =>res.json())
               .subscribe(

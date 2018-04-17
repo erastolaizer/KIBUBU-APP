@@ -37,10 +37,9 @@ export class LengoPage {
              this.showLoader();
                let     headers  : any      = new Headers({ 'X-Requested-With': 'XMLHttpRequest'}),
                        options  : any      = new RequestOptions({ headers: headers }),
-                       url      : any      = 'http://192.168.43.224:8000/api/lengo',
+                       url      : any      = 'http://kibubu.dreamgeeks.tech/public/api/lengo',
                        user_id       : any      =  this.id ,
                        body    : any        = {lengo_name:lengo_name, time:time, user_id:user_id};
-               console.log(user_id);
                        this.http.post(url,body,options).map(res =>res.json())
                        .subscribe(
                         data =>  {
@@ -57,7 +56,6 @@ export class LengoPage {
                         else if(error.status === 0){
                        this.sendNotification("Please check your internet connections!!");
                         }
-                        this.sendNotification("Something went wrong");
 
                       });
                          this.loading.dismiss();

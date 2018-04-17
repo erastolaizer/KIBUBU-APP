@@ -22,7 +22,7 @@ export class DepositPage {
     this.deposit = this.formBuilder.group({
     lengo: ['', Validators.required],
     phone_number: ['', Validators.compose([Validators.required,Validators.pattern('[0-9]*')])],
-    password: ['', Validators.compose([Validators.required,Validators.pattern('[0-9]*')])],
+    password: ['', Validators.compose([Validators.required])],
     service_provider: ['', Validators.required],
     amount: ['', Validators.compose([Validators.required,Validators.pattern('[0-9]*')])],
   });
@@ -35,7 +35,7 @@ export class DepositPage {
 
       let     headers  : any      = new Headers({ 'X-Requested-With': ' '}),
               options  : any      = new RequestOptions({ headers: headers }),
-              url      : any      = 'http://192.168.43.224:8000/api/lengo/' + this.id;
+              url      : any      = 'http://kibubu.dreamgeeks.tech/public/api/lengo/' + this.id;
 
               this.http.get(url,options).map(res =>res.json())
               .subscribe(
@@ -69,7 +69,7 @@ export class DepositPage {
              this.showLoader();
                let     headers  : any      = new Headers({ 'X-Requested-With': 'XMLHttpRequest'}),
                        options  : any      = new RequestOptions({ headers: headers }),
-                       url      : any      = 'http://192.168.43.224:8000/api/deposit',
+                       url      : any      = 'http://kibubu.dreamgeeks.tech/public/api/deposit',
                        user_id  : any      =  this.id ,
                        body     : any      = {lengo:lengo, service_provider:service_provider,phone_number:phone_number, amount:amount,password:password, user_id:user_id};
 

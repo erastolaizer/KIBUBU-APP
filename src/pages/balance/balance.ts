@@ -23,7 +23,7 @@ public id :any = [];
 
          let headers   : any      = new Headers({ 'Content-Type': "application/x-www-form-urlencoded; charset=UTF-8"}),
              options   : any     = new RequestOptions({ headers: headers }),
-             url       : any      = 'http://192.168.43.224:8000/api/balances/' + this.id,
+             url       : any      = 'http://kibubu.dreamgeeks.tech/public/api/balances/' + this.id,
              user_id  : any      =  this.id ,
              body    : any        = {user_id:user_id};
 

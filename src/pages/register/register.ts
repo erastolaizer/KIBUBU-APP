@@ -33,7 +33,7 @@ export class RegisterPage {
              if (password === repeat_pass){
                let     headers  : any      = new Headers({ 'X-Requested-With': 'XMLHttpRequest'}),
                        options  : any      = new RequestOptions({ headers: headers }),
-                       url      : any       = 'http://192.168.43.224:8000/api/user',
+                       url      : any       = 'http://kibubu.dreamgeeks.tech/public/api/user',
                        body    : any        = {name:name,phone_number:phone_number,password:password};
 
                        this.http.post(url,body,options).map(res =>res.json())

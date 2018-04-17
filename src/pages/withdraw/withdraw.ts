@@ -37,7 +37,7 @@ export class WithdrawPage {
 
       let     headers  : any      = new Headers({ 'X-Requested-With': 'XMLHttpRequest'}),
               options  : any      = new RequestOptions({ headers: headers }),
-              url      : any       = 'http://192.168.43.224:8000/api/lengo/' + this.id;
+              url      : any       = 'http://kibubu.dreamgeeks.tech/public/api/lengo/' + this.id;
 
               this.http.get(url,options).map(res =>res.json())
               .subscribe(
@@ -65,7 +65,7 @@ export class WithdrawPage {
              this.showLoader();
                let     headers  : any      = new Headers({ 'X-Requested-With': 'XMLHttpRequest'}),
                        options  : any      = new RequestOptions({ headers: headers }),
-                       url      : any      = 'http://192.168.43.224:8000/api/withdraw',
+                       url      : any      = 'http://kibubu.dreamgeeks.tech/public/api/withdraw',
                        user_id  : any      =  this.id ,
                        body    : any        = {lengo_name:lengo_name, service_provider:service_provider,phone_number:phone_number, user_id:user_id, password:password};
 
